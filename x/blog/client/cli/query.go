@@ -22,9 +22,12 @@ func GetQueryCmd(queryRoute string) *cobra.Command {
 		DisableFlagParsing:         true,
 		SuggestionsMinimumDistance: 2,
 		RunE:                       client.ValidateCmd,
-	}
 
+	}
+	
 	// this line is used by starport scaffolding # 1
+	cmd.AddCommand(CmdListPost())
+	cmd.AddCommand(CmdShowPost())
 
 	return cmd
 }
